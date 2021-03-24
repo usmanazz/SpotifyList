@@ -72,6 +72,7 @@ let Spotify = {
         songsNotInPlaylist = songsNotInPlaylist.map((track) =>
           JSON.parse(track)
         );
+        // wth
 
         return songsNotInPlaylist.map((track) => ({
           id: track.id,
