@@ -61,9 +61,14 @@ let Spotify = {
           JSON.stringify(track)
         );
 
-        const playlistTracksToString = playlistTracks.map((track) =>
-          JSON.stringify(track)
-        );
+        let playlistTracksToString;
+        if (!playlistTracks) {
+          playlistTracksToString = [];
+        } else {
+          playlistTracksToString = playlistTracks.map((track) =>
+            JSON.stringify(track)
+          );
+        }
 
         let songsNotInPlaylist = jsonResponseItemsToString.filter(
           (e) => !playlistTracksToString.includes(e)

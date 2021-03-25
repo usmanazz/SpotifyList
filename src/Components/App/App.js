@@ -24,6 +24,14 @@ class App extends React.Component {
     this.addAndRemoveTrack = this.addAndRemoveTrack.bind(this);
   }
 
+  componentDidMount() {
+    if (window.location.href.match(/access_token=/)) {
+      Spotify.search(window.sessionStorage.searchTerm).then((searchResults) => {
+        this.setState({ searchResults: searchResults });
+      });
+    }
+  }
+
   addTrack(track) {
     let tracks = this.state.playlistTracks;
     if (tracks.find((element) => track.id === element.id)) {
@@ -66,6 +74,8 @@ class App extends React.Component {
   }
 
   search(searchTerm, playlistTracks) {
+    window.sessionStorage.searchTerm = searchTerm;
+
     Spotify.search(searchTerm, playlistTracks).then((searchResults) => {
       this.setState({ searchResults: searchResults });
     });
