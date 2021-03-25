@@ -10,6 +10,9 @@ import Spotify from "../../util/Spotify";
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    // Keep track state of playlist  name, playlist tracks, and search result
+    // tracks fetched when search for album artist or song name.
     this.state = {
       searchResults: [],
       playlistName: "My Playlist",
@@ -24,11 +27,9 @@ class App extends React.Component {
     this.addAndRemoveTrack = this.addAndRemoveTrack.bind(this);
   }
 
+  // Check if current link contains access token, search spotify with term saved in
+  // session storage and store returned tracks from fetch call in state.
   componentDidMount() {
-    window.addEventListener("load", () => {
-      Spotify.getAccessToken();
-    });
-
     if (window.location.href.match(/access_token=/)) {
       Spotify.search(window.sessionStorage.searchTerm).then((searchResults) => {
         this.setState({ searchResults: searchResults });
@@ -36,6 +37,8 @@ class App extends React.Component {
     }
   }
 
+  // Add track to playlist section.
+  // Note: DO NOT MODIFY STATE, create new list of tracks
   addTrack(track) {
     let tracks = this.state.playlistTracks;
     if (tracks.find((element) => track.id === element.id)) {
@@ -46,6 +49,8 @@ class App extends React.Component {
     this.setState({ playlistTracks: tracks });
   }
 
+  // Remove tracks from playlist section if isRemoval is true and
+  // remove tracks from searchResults section if isRemoval is false.
   removeTrack(track, isRemoval) {
     let tracks = isRemoval
       ? this.state.playlistTracks
@@ -57,15 +62,19 @@ class App extends React.Component {
     this.setState(updatedTracks);
   }
 
+  // Uses addTrack and removeTrack to simultaneously add a track to
+  // playlist section and remove it from searchResults.
   addAndRemoveTrack(track, isRemoval) {
     this.addTrack(track);
     this.removeTrack(track, isRemoval);
   }
 
+  // Changes playlist name based on user input
   updatePlaylistName(name) {
     this.setState({ playlistName: name });
   }
 
+  // Adds new playlist with tracks to user's spotify playlist.
   savePlaylist() {
     const trackURIs = this.state.playlistTracks.map((track) => track.uri);
 
@@ -77,6 +86,8 @@ class App extends React.Component {
     });
   }
 
+  // Saves user input term in search bar to sessionStorage for later use
+  // and searches for searchTerm via fetch call to Spotify API.
   search(searchTerm, playlistTracks) {
     window.sessionStorage.searchTerm = searchTerm;
 
@@ -85,11 +96,13 @@ class App extends React.Component {
     });
   }
 
+  // Overall layout of Web app that calls SearchBar, SearchResults, and Playlist
+  // React Components and passes down methods as props.
   render() {
     return (
       <div>
         <h1>
-          Ja<span className="highlight">mmm</span>ing
+          Spotify<span className="highlight">List</span>
         </h1>
         <div className="App">
           <SearchBar

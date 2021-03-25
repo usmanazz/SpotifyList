@@ -3,7 +3,7 @@
   height: 950px;
   overflow-y: scroll;
   padding: 0.88rem;
-  background-color: rgba(1, 12, 63, 0.7);
+  background-color: rgba(1, 71, 24, 0.7);
   box-shadow: 0 4px 2px 2px #000000;
 }
 
@@ -17,4 +17,9 @@
     width: 90%;
     margin-bottom: 2rem;
   }
+}
+
+h2 {
+  border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+  padding-bottom: 10px;
 }
