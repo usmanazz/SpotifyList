@@ -28,6 +28,12 @@ class App extends React.Component {
     window.addEventListener("load", () => {
       Spotify.getAccessToken();
     });
+
+    if (window.location.href.match(/access_token=/)) {
+      Spotify.search(window.sessionStorage.searchTerm).then((searchResults) => {
+        this.setState({ searchResults: searchResults });
+      });
+    }
   }
 
   addTrack(track) {
@@ -72,6 +78,8 @@ class App extends React.Component {
   }
 
   search(searchTerm, playlistTracks) {
+    window.sessionStorage.searchTerm = searchTerm;
+
     Spotify.search(searchTerm, playlistTracks).then((searchResults) => {
       this.setState({ searchResults: searchResults });
     });
