@@ -47,7 +47,6 @@ let Spotify = {
         if (!jsonResponse.tracks) {
           return [];
         }
-        console.log(jsonResponse);
 
         const jsonResponseSimplify = jsonResponse.tracks.items.map((track) => ({
           id: track.id,
@@ -72,7 +71,6 @@ let Spotify = {
         songsNotInPlaylist = songsNotInPlaylist.map((track) =>
           JSON.parse(track)
         );
-        // wth
 
         return songsNotInPlaylist.map((track) => ({
           id: track.id,
