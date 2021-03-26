@@ -1,5 +1,5 @@
 const clientID = "81e6669548764546854f46c58b103a95";
-const redirectUri = "https://spotifylist.netlify.app";
+const redirectUri = "https://spotifylist.netlify.app/";
 
 // "https://myspotifyextension.surge.sh"
 
