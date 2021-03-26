@@ -7,8 +7,8 @@ Built a Web Application with React components, passing state, and requests with 
 ## Features
 
 ![](./public/images/screenshot.png)
-
 ###### Screenshot of the web application.
+
 
 1. User can search for a song, album or artist name.
 2. Search results will show up in the 'Results' section.
@@ -16,9 +16,11 @@ Built a Web Application with React components, passing state, and requests with 
 
 ![](./public/images/results.png)
 
+
 4. Tracks can be removed from the playlist section by clicking the '-' icon (see image below).
 
 ![](./public/images/playlist.png)
+
 
 5. User can change the name of their playlist by updating the input field which contains the default value "New Playlist".
 6. Once the user has created their custom playlist, they can click the 'Save to Spotify' button to add the playlist to their account.

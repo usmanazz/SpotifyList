@@ -5,9 +5,12 @@
   overflow-y: scroll;
   width: 37%;
   max-height: 950px;
-  padding: 2.27rem 1.16rem;
   background-color: rgba(1, 71, 24, 0.7);
   box-shadow: 0 4px 2px 2px #000000;
+  padding-bottom: 2.27rem;
+  padding-left: 1.16rem;
+  padding-right: 1.16rem;
+  padding-top: 1rem;
 }
 
 .Playlist input {
