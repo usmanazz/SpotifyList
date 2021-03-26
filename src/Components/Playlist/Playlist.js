@@ -9,6 +9,8 @@ class Playlist extends React.Component {
     this.handleNameChange = this.handleNameChange.bind(this);
   }
 
+  // Records user's input for Playlist name and passes value
+  // via props to function in App.js
   handleNameChange(event) {
     this.props.onNameChange(event.target.value);
   }

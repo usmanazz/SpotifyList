@@ -4,6 +4,8 @@ import TrackList from "../TrackList/TrackList";
 
 import "./SearchResults.css";
 
+// renders SearchResults and passes various props to
+// Tracklist as attributes
 class SearchResults extends React.Component {
   render() {
     return (

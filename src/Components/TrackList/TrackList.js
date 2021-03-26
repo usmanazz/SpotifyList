@@ -5,6 +5,7 @@ import "./TrackList.css";
 import Track from "../Track/Track";
 
 class TrackList extends React.Component {
+  // Passes down props to Track
   mapTracks() {
     if (this.props.tracks) {
       return this.props.tracks.map((track) => (

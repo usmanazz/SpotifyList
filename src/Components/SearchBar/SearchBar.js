@@ -13,10 +13,13 @@ class SearchBar extends React.Component {
     this.handleTermChange = this.handleTermChange.bind(this);
   }
 
+  // Passes user input to search via props
   search() {
     this.props.onSearch(this.state.term, this.props.playlistTracks);
   }
 
+  // Records each instance of user's input and saves
+  // value to local state
   handleTermChange(event) {
     this.setState({ term: event.target.value });
   }

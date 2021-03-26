@@ -11,6 +11,8 @@ class Track extends React.Component {
     this.addAndRemoveTrack = this.addAndRemoveTrack.bind(this);
   }
 
+  // Assigns '+' to SearchResults track or
+  // '-' to playList track
   renderAction() {
     return this.props.isRemoval ? (
       <button className="Track-action" onClick={this.removeTrack}>
