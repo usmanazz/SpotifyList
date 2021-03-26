@@ -89,6 +89,9 @@ class App extends React.Component {
   // Saves user input term in search bar to sessionStorage for later use
   // and searches for searchTerm via fetch call to Spotify API.
   search(searchTerm, playlistTracks) {
+    if (!searchTerm) {
+      return;
+    }
     window.sessionStorage.searchTerm = searchTerm;
 
     Spotify.search(searchTerm, playlistTracks).then((searchResults) => {
