@@ -1,5 +1,7 @@
 # SpotifyList
 
+Link to the [SpotifyList](https://spotifylist.netlify.app/) application. 
+
 ## Introduction
 
 Built a Web Application with React components, passing state, and requests with the [Spotify API](https://developer.spotify.com/documentation/web-api/) that allows users to search the Spotify library, create a custom playlist, then save it to their Spotify account.
