@@ -10,6 +10,7 @@ Built a Web Application with React components, passing state, and requests with 
 ###### Screenshot of the web application.
 
 
+
 1. User can search for a song, album or artist name.
 2. Search results will show up in the 'Results' section.
 3. Tracks can be added to the playlist section by clicking the '+' icon to the right of each track (see image below).
@@ -17,9 +18,11 @@ Built a Web Application with React components, passing state, and requests with 
 ![](./public/images/results.png)
 
 
+
 4. Tracks can be removed from the playlist section by clicking the '-' icon (see image below).
 
 ![](./public/images/playlist.png)
+
 
 
 5. User can change the name of their playlist by updating the input field which contains the default value "New Playlist".
